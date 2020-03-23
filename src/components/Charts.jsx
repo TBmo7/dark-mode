@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import Chart from "./Chart";
+import Numbers from "./Numbers";
 
 const Charts = ({ coinData }) => {
+  
+
+
+
+
+
   return (
     <div className="charts">
       {coinData.map(coin => (
@@ -12,7 +19,11 @@ const Charts = ({ coinData }) => {
             <img src={coin.image} height="40" alt={coin.name} />
           </div>
           <Chart sparklineData={coin.sparkline_in_7d.price} />
+          <Numbers  coin = {coin}/>
+          
+          
         </div>
+        
       ))}
     </div>
   );
